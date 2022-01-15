@@ -20,7 +20,7 @@ class MyWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
      // home:HomePage(),
-      initialRoute: "/home",
+      initialRoute: "/",
       routes: {
         "/":(context) => LoginPage(),
         "/home" : (context) => HomePage(),
