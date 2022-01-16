@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   //const HomePage({Key? key}) : super(key: key);
   final double day = 100;
 
-  final dummyList = List.generate(20, (index) => CatalogModals.items[0]);
+ // final dummyList = List.generate(20, (index) => CatalogModals.items[0]);
 
     @override
   void initState() {
@@ -24,11 +24,27 @@ class _HomePageState extends State<HomePage> {
     loadData();
   }
 
-  void loadData() async{
+   loadData() async{
+      await Future.delayed(Duration(seconds: 2));
   var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
   // print(catalogJson);
    var decodeData = jsonDecode(catalogJson);
-   print(decodeData["products"]);
+ //  print(decodeData["products"]);
+
+    var productData = decodeData["products"];
+  print("++++++++++++++++++++++");
+   // List<Item> list = List.from(productData).map((item) => Item.fromJson(item)).toList();
+
+   // print(list.length);
+   // for(int i =0;i< list.length;i++)
+   //   {
+   //     print(list[i]);
+   //   }
+   // print("++++++++++++++++++++++");
+ CatalogModals.items  = List.from(productData).map((item) => Item.fromJson(item)).toList();
+  setState(() {});
+
+
   }
 
   // HomePage({Key? key}) : super(key: key);
@@ -38,11 +54,13 @@ class _HomePageState extends State<HomePage> {
 
       appBar: AppBar(title: Text("HOME"),),
       body: Padding(padding: EdgeInsets.all(8.0),
-      child: ListView.builder(itemCount: dummyList.length,itemBuilder:(context,index){
+      child: (CatalogModals.items != null && CatalogModals.items.isNotEmpty)?ListView.builder(itemCount:  CatalogModals.items.length,itemBuilder:(context,index){
 
-        return ItemWidget(item:dummyList[index],);
+        return ItemWidget(item: CatalogModals.items[index],);
       },
-      ),
+      ):Center(
+        child: CircularProgressIndicator(),
+    ),
       ),
       drawer: const MyDrawer(),
     );
