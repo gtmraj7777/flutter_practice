@@ -1,4 +1,12 @@
 
+class CatalogModals
+{
+  static  final items = [
+  Item(id: "Ranchi", name: "Iphone", desc: "Apple 12 pro", price: 999, color: "#33505a", image: "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/12/14/1009949-virat-kohli.jpg")
+
+  ];
+}
+
 
 class Item
 {
@@ -16,7 +24,3 @@ class Item
 }
 
 
-final products = [
-  Item(id: "Ranchi", name: "Iphone", desc: "Apple 12 pro", price: 999, color: "#33505a", image: "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/12/14/1009949-virat-kohli.jpg")
-
-];
