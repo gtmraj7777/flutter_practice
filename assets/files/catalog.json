@@ -1,0 +1,59 @@
+{
+
+	"products": [
+
+		{
+
+			"id": 1,
+			"name": "iPhone 12 Pro",
+			"desc": "Apple iPhone 12th generation",
+			"price": 999,
+			"color": "#33505a",
+			"image": "https://www.refurbished.store/cache/images/iphone-8-rood_600x600_BGresize_16777215-tj.png"
+
+		},
+		{
+
+			"id": 2,
+			"name": "iPhone 12 Pro",
+			"desc": "Apple iPhone 12th generation",
+			"price": 999,
+			"color": "#33505a",
+			"image": "https://www.refurbished.store/cache/images/iphone-8-rood_600x600_BGresize_16777215-tj.png"
+
+		},
+		{
+
+			"id": 3,
+			"name": "iPhone 12 Pro",
+			"desc": "Apple iPhone 12th generation",
+			"price": 999,
+			"color": "#33505a",
+			"image": "https://www.refurbished.store/cache/images/iphone-8-rood_600x600_BGresize_16777215-tj.png"
+
+		},
+		{
+
+			"id": 4,
+			"name": "iPhone 12 Pro",
+			"desc": "Apple iPhone 12th generation",
+			"price": 999,
+			"color": "#33505a",
+			"image": "https://www.refurbished.store/cache/images/iphone-8-rood_600x600_BGresize_16777215-tj.png"
+
+		},
+		{
+
+			"id": 5,
+			"name": "iPhone 12 Pro",
+			"desc": "Apple iPhone 12th generation",
+			"price": 999,
+			"color": "#33505a",
+			"image": "https://www.refurbished.store/cache/images/iphone-8-rood_600x600_BGresize_16777215-tj.png"
+
+		}
+
+
+	]
+
+}
