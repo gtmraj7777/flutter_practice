@@ -1,6 +1,7 @@
 import 'package:first_app11/models/catalog.dart';
 import 'package:first_app11/widgets/drawer.dart';
 import 'package:first_app11/widgets/item_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -54,11 +55,57 @@ class _HomePageState extends State<HomePage> {
 
       appBar: AppBar(title: Text("HOME"),),
       body: Padding(padding: EdgeInsets.all(8.0),
-      child: (CatalogModals.items != null && CatalogModals.items.isNotEmpty)?ListView.builder(itemCount:  CatalogModals.items.length,itemBuilder:(context,index){
+      child: (CatalogModals.items != null && CatalogModals.items.isNotEmpty)?
 
-        return ItemWidget(item: CatalogModals.items[index],);
-      },
-      ):Center(
+
+          GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20,
+
+          ),
+
+              itemBuilder: (context,index){
+
+            final item = CatalogModals.items[index];
+            return Card(
+                clipBehavior: Clip.antiAlias,
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(10.0),
+                 ),
+                child: GridTile(
+                  child: Image.network(item.image),
+                  header: Container(
+                      child: Text(item.name,style: TextStyle(color: Colors.white),),
+                     padding: EdgeInsets.all(12.0),
+                     decoration: BoxDecoration(
+                       color: Colors.amber
+                     ),
+                  ),
+                  footer: Container(
+                    child: Text(item.price.toString(),style: TextStyle(color: Colors.white),),
+                    padding: EdgeInsets.all(12.0),
+                    decoration: BoxDecoration(
+                        color: Colors.black
+                    ),
+                  )
+                ));
+
+              },
+             itemCount: CatalogModals.items.length,
+
+
+          )
+
+
+
+      // ListView.builder(itemCount:  CatalogModals.items.length,itemBuilder:(context,index){
+      //
+      //   return ItemWidget(item: CatalogModals.items[index],);
+      // },
+      // )
+          :Center(
         child: CircularProgressIndicator(),
     ),
       ),
